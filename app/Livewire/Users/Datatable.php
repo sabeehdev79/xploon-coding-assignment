@@ -10,9 +10,21 @@ class Datatable extends Component
 { 
 
     public $users;
+    public $show = false;
+    
     private $handle;
+
+
     public function boot(){
         $this->handle = new GetValidUserData;
+    }
+
+    public function rendering(){
+        $this->show = true;
+    }
+
+    public function rendered(){
+        $this->show = false;
     }
 
     public function render()
