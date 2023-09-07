@@ -1,15 +1,11 @@
 <div>
 <button wire:click="$refresh" 
+@click="$dispatch('data-loaded')"
     class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-700 hover:border-transparent rounded">
     Reload Data 
 </button>
 <br/><br/>
 
-    <p x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 1000)">
-        Loading data.......
-    </p>
-    <br/><br/>
-    
     <table class="table-auto border-collapse border border-slate-400 ...">
         <thead> 
             <tr>
